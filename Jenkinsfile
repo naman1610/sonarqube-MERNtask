@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 echo 'Running SonarQube analysis...'
-                bat bat '''
+                bat '''
                 sonar-scanner -Dsonar.projectKey=naman-assignment2-backend ^
                 -Dsonar.sources=. ^
                 -Dsonar.host.url=http://localhost:9000 ^
