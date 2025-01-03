@@ -33,8 +33,11 @@ pipeline {
             }
             steps {
                 echo 'Running SonarQube analysis...'
-                bat '''
-                    sonar-scanner.bat -D"sonar.projectKey=naman-assignment2-backend" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=${SONAR_TOKEN}"
+                bat bat '''
+                sonar-scanner -Dsonar.projectKey=naman-assignment2-backend ^
+                -Dsonar.sources=. ^
+                -Dsonar.host.url=http://localhost:9000 ^
+                -Dsonar.token=%SONAR_TOKEN%
                 '''
             }
         }
